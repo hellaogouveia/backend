@@ -18,11 +18,9 @@ const File = new mongoose.Schema(
     }
 );
 
-
 // campo virtual: não existe no mongo (banco de dados)
 File.virtual("url").get(function(){
-    const url = process.env.URL || 'http://localhost:3333';
-    
+    const url = process.env.URL || 'http://localhost:3333'
     return `${url}/files/${encodeURIComponent(this.path)}`;
 });
 
