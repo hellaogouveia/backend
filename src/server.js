@@ -37,7 +37,8 @@ app.use('/files',express.static(path.resolve(__dirname, '..', 'tmp')));
 
 app.use(require('./routes')); // ./ indica que é um arquivo
 
-server.listen(3333); //define porta
+//server.listen(3333); //define porta
+server.listen(process.env.PORT || 3333); //usar variável ambiente
 
 
 /*
